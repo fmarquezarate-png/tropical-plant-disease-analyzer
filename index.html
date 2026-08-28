@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌴 Tropical Plant Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌴 Tropical Plant Disease Analyzer</h1>
+            <p class="subtitle">Analiza tus plantas tropicales y detecta enfermedades</p>
+        </header>
+
+        <main>
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                    <div class="upload-icon">📷</div>
+                    <p>Arrastra una imagen o haz clic para subir</p>
+                    <p class="hint">Formatos: JPG, PNG, WEBP</p>
+                </div>
+                <button id="analyzeBtn" class="btn btn-primary" disabled>
+                    🔍 Analizar planta
+                </button>
+            </section>
+
+            <!-- Preview Section -->
+            <section class="preview-section" id="previewSection" style="display: none;">
+                <h2>Vista previa</h2>
+                <img id="preview" alt="Vista previa de la planta">
+                <button id="newImageBtn" class="btn btn-secondary">🔄 Nueva imagen</button>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>📊 Resultados del análisis</h2>
+                
+                <div class="result-card plant-identified">
+                    <h3>🌿 Planta identificada</h3>
+                    <p class="plant-name" id="plantName">-</p>
+                    <p class="confidence" id="plantConfidence">-</p>
+                </div>
+
+                <div class="result-card diseases-detected" id="diseasesCard">
+                    <h3>⚠️ Enfermedades detectadas</h3>
+                    <div id="diseasesList"></div>
+                </div>
+
+                <div class="result-card recommendations">
+                    <h3>💡 Recomendaciones</h3>
+                    <ul id="recommendationsList"></ul>
+                </div>
+
+                <div class="result-card plant-info">
+                    <h3>ℹ️ Información de la planta</h3>
+                    <div id="plantInfo"></div>
+                </div>
+            </section>
+
+            <!-- Loading Section -->
+            <section class="loading-section" id="loadingSection" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analizando imagen...</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>🌱 Tropical Plant Disease Analyzer &copy; 2026</p>
+        </footer>
+    </div>
+
+    <script src="plants-db.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

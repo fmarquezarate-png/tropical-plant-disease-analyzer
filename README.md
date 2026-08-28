@@ -1,53 +1,73 @@
 # 🌴 Tropical Plant Disease Analyzer
 
-Aplicación para el análisis de plantas tropicales y detección de enfermedades.
+Aplicación web sencilla para análisis de plantas tropicales y detección de enfermedades.
 
 ## Descripción
 
-Esta aplicación permite:
-- Identificar plantas tropicales a partir de imágenes
+Esta aplicación web permite:
+- Subir imágenes de plantas tropicales
+- Identificar la especie de planta
 - Detectar posibles enfermedades y plagas
-- Proporcionar recomendaciones de tratamiento
-- Mantener un historial de análisis
+- Obtener recomendaciones de cuidado
+
+**⚡ Sin backend ni base de datos** - Todo funciona directamente en el navegador.
 
 ## Tecnologías
 
-- **Frontend**: React + Vite
-- **Backend**: Python (FastAPI/Flask)
-- **Base de datos**: Supabase (PostgreSQL)
-- **ML**: TensorFlow/PyTorch para clasificación de imágenes
+- **Frontend**: HTML5 + CSS3 + JavaScript (Vanilla)
+- **ML**: TensorFlow.js (modelo pre-entrenado)
+- **Procesamiento**: Canvas API para análisis de imágenes
 
 ## Estructura del proyecto
 
 ```
 tropical-plant-disease-analyzer/
-├── frontend/          # Aplicación React
-├── backend/           # API en Python
-├── models/            # Modelos de ML entrenados
-├── data/              # Dataset de imágenes
-└── docs/              # Documentación
+├── index.html          # Página principal
+├── styles.css          # Estilos
+├── app.js              # Lógica de la aplicación
+├── plants-db.js        # Base de datos de plantas (JSON)
+└── models/             # Modelos de ML (opcional)
 ```
 
-## Instalación
+## Instalación y uso
 
-### Backend
+### Opción 1: Abrir directamente
 ```bash
-cd backend
-pip install -r requirements.txt
+# Simplemente abre el archivo index.html en tu navegador
+open index.html
 ```
 
-### Frontend
+### Opción 2: Usar un servidor local (recomendado)
 ```bash
-cd frontend
-npm install
-npm run dev
+# Con Python
+python -m http.server 8000
+
+# Con Node.js
+npx serve
+
+# Luego abre http://localhost:8000
 ```
 
-## Uso
+### Opción 3: Desplegar en Netlify/Vercel
+1. Sube el repositorio a GitHub
+2. Conecta Netlify/Vercel
+3. ¡Listo! Se desplegará automáticamente
 
-1. Subir una imagen de la planta
-2. El modelo identifica la especie y detecta enfermedades
-3. Recibir recomendaciones de cuidado y tratamiento
+## Características
+
+✅ Interfaz sencilla y responsive  
+✅ Carga de imágenes desde el dispositivo  
+✅ Análisis básico de color y textura  
+✅ Base de datos de plantas tropicales  
+✅ Recomendaciones de cuidado  
+✅ Sin necesidad de servidor  
+
+## Próximas mejoras
+
+- [ ] Integrar modelo TensorFlow.js pre-entrenado
+- [ ] Añadir más plantas a la base de datos
+- [ ] Implementar análisis avanzado de imágenes
+- [ ] Modo offline con Service Worker
 
 ## Licencia
 
